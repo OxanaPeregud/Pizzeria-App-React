@@ -1,34 +1,34 @@
 .pizzas {
-  max-width: 60rem;
-  width: 90%;
-  margin: 2rem auto;
-  animation: pizzas-appear 1s ease-out forwards;
-}
-
-.PizzasLoading {
-  text-align: center;
-  color: white;
-}
-
-.PizzasError {
-  text-align: center;
-  color: red;
+    max-width: 60rem;
+    width: 90%;
+    margin: 2rem auto;
+    animation: pizzas-appear 1s ease-out forwards;
 }
 
 .pizzas ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.loading {
+    text-align: center;
+    color: white;
+}
+
+.error {
+    text-align: center;
+    color: red;
 }
 
 @keyframes pizzas-appear {
-  from {
-    opacity: 0;
-    transform: translateY(3rem);
-  }
+    from {
+        opacity: 0;
+        transform: translateY(3rem);
+    }
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

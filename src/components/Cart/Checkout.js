@@ -56,41 +56,47 @@ const Checkout = (props) => {
         });
     };
 
-    const nameControlClasses = `${classes.control} ${
-        formInputsValidity.name ? '' : classes.invalid
-    }`;
-    const addressControlClasses = `${classes.control} ${
-        formInputsValidity.address ? '' : classes.invalid
-    }`;
-    const postalCodeControlClasses = `${classes.control} ${
-        formInputsValidity.postalCode ? '' : classes.invalid
-    }`;
-    const cityControlClasses = `${classes.control} ${
-        formInputsValidity.city ? '' : classes.invalid
-    }`;
+    const nameControlClasses = `${classes.control} ${formInputsValidity.name ? '' : classes.invalid}`;
+    const addressControlClasses = `${classes.control} ${formInputsValidity.address ? '' : classes.invalid}`;
+    const postalCodeControlClasses = `${classes.control} ${formInputsValidity.postalCode ? '' : classes.invalid}`;
+    const cityControlClasses = `${classes.control} ${formInputsValidity.city ? '' : classes.invalid}`;
 
     return (
         <form className={classes.form} onSubmit={confirmHandler}>
             <div className={nameControlClasses}>
                 <label htmlFor='name'>Имя</label>
-                <input type='text' id='name' ref={nameInputRef}/>
+                <input
+                    type='text'
+                    id='name'
+                    ref={nameInputRef}
+                />
                 {!formInputsValidity.name && <p>Введите имя!</p>}
             </div>
             <div className={addressControlClasses}>
                 <label htmlFor='address'>Адрес</label>
-                <input type='text' id='address' ref={addressInputRef}/>
+                <input
+                    type='text'
+                    id='address'
+                    ref={addressInputRef}
+                />
                 {!formInputsValidity.address && <p>Введите адрес!</p>}
             </div>
             <div className={postalCodeControlClasses}>
                 <label htmlFor='postal'>Индекс</label>
-                <input type='text' id='postal' ref={postalCodeInputRef}/>
-                {!formInputsValidity.postalCode && (
-                    <p>Введите почтовый индекс (6 цифр)!</p>
-                )}
+                <input
+                    type='text'
+                    id='postal'
+                    ref={postalCodeInputRef}
+                />
+                {!formInputsValidity.postalCode && (<p>Введите почтовый индекс (6 цифр)!</p>)}
             </div>
             <div className={cityControlClasses}>
                 <label htmlFor='city'>Город</label>
-                <input type='text' id='city' ref={cityInputRef}/>
+                <input
+                    type='text'
+                    id='city'
+                    ref={cityInputRef}
+                />
                 {!formInputsValidity.city && <p>Введите город!</p>}
             </div>
             <div className={classes.actions}>

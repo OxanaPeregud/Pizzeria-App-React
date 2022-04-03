@@ -9,8 +9,8 @@ const HeaderCartButton = (props) => {
     const orderedPizzas = useContext(OrderContext);
     const {items} = orderedPizzas;
 
-    const numberOfOrderedPizzas = items.reduce((curNumber, item) => {
-        return curNumber + item.amount;
+    const numberOfOrderedPizzas = items.reduce((currentNumber, item) => {
+        return currentNumber + item.amount;
     }, 0);
 
     const btnClasses = `${classes.button} ${buttonIsHighlighted ? classes.bump : ''}`;

@@ -10,7 +10,7 @@ const PizzasMenu = () => {
     const [httpError, setHttpError] = useState();
 
     useEffect(() => {
-        const fetchPizzas = async () => {
+        const getPizzas = async () => {
             const response = await fetch('https://react-apps-c854c-default-rtdb.firebaseio.com/pizzas.json');
 
             if (!response.ok) {
@@ -34,7 +34,7 @@ const PizzasMenu = () => {
             setIsLoading(false);
         };
 
-        fetchPizzas().catch((error) => {
+        getPizzas().catch(error => {
             setIsLoading(false);
             setHttpError(error.message);
         });
@@ -42,7 +42,7 @@ const PizzasMenu = () => {
 
     if (isLoading) {
         return (
-            <section className={classes.PizzasLoading}>
+            <section className={classes.loading}>
                 <p>Загружается...</p>
             </section>
         );
@@ -50,7 +50,7 @@ const PizzasMenu = () => {
 
     if (httpError) {
         return (
-            <section className={classes.PizzasError}>
+            <section className={classes.error}>
                 <p>{httpError}</p>
             </section>
         );
